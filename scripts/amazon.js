@@ -1,4 +1,5 @@
 const productList = document.querySelector(".js-product-grid");
+const cartQuantity=document.querySelector(".js-cart-quantity");
 let innerHtml = "";
 
 products.forEach((product) => {
@@ -80,6 +81,11 @@ addToCartBtns.forEach((btn) => {
         quantity:1
        })
     }
-   console.log(cart);
+
+    let totalCartQuantity=0;
+    cart.forEach((item)=>{
+      totalCartQuantity+=item.quantity;
+    })
+    cartQuantity.innerHTML=totalCartQuantity;
   });
 });
