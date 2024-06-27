@@ -102,8 +102,8 @@ const deleteLinks=document.querySelectorAll(".js-delete-link");
  
 deleteLinks.forEach((link , i )=>{
   link.addEventListener("click" , ()=>{
-   const productId=link.dataset.productId;
-   
+   const productId=link.dataset.productId;   
+   removeProductFromCart(productId);
    const container=document.querySelector(`.js-cart-item-container-${productId}`);
    container.remove();
   })
